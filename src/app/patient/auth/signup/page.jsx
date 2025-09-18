@@ -1,16 +1,18 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useActionState } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Eye, EyeOff, Leaf, User, Mail, Lock, UserCheck } from "lucide-react"
+import { patientSignup } from "@/app/auth/actions"
 
 export default function PatientSignupPage() {
   const [showPassword, setShowPassword] = useState(false)
   const [showConfirmPassword, setShowConfirmPassword] = useState(false)
+  const [state, action, pending] = useActionState(patientSignup, undefined)
   const [signupData, setSignupData] = useState({
     firstName: "",
     lastName: "",
@@ -69,7 +71,7 @@ export default function PatientSignupPage() {
           </CardHeader>
 
           <CardContent>
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form action={action} className="space-y-4">
               {/* First Name & Last Name */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="space-y-2">
@@ -209,9 +211,8 @@ export default function PatientSignupPage() {
                     placeholder="Confirm your password"
                     value={signupData.confirmPassword}
                     onChange={handleInputChange}
-                    className={`pl-10 pr-10 h-11 border-gray-200 focus:border-emerald-500 focus:ring-emerald-500 ${
-                      !passwordMatch ? "border-red-300 focus:border-red-500 focus:ring-red-500" : ""
-                    }`}
+                    className={`pl-10 pr-10 h-11 border-gray-200 focus:border-emerald-500 focus:ring-emerald-500 ${!passwordMatch ? "border-red-300 focus:border-red-500 focus:ring-red-500" : ""
+                      }`}
                     required
                   />
                   <button
@@ -252,6 +253,7 @@ export default function PatientSignupPage() {
                 </Label>
               </div>
 
+              {state?.errors && <p>{state.errors}</p>}
               {/* Signup Button */}
               <Button
                 type="submit"

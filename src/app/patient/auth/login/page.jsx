@@ -1,15 +1,17 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useActionState } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Eye, EyeOff, Leaf, User, Mail, Lock } from "lucide-react"
+import { patientLogin } from "@/app/auth/actions"
 
 export default function PatientLoginPage() {
   const [showPassword, setShowPassword] = useState(false)
+  const [state, action, pending] = useActionState(patientLogin, undefined)
   const [loginData, setLoginData] = useState({
     emailOrUsername: "",
     password: "",
@@ -22,12 +24,6 @@ export default function PatientLoginPage() {
       ...prev,
       [name]: type === "checkbox" ? checked : value,
     }))
-  }
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    console.log("Patient login attempt:", loginData)
-    // Handle login logic here
   }
 
   return (
@@ -54,11 +50,11 @@ export default function PatientLoginPage() {
           </CardHeader>
 
           <CardContent>
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form action={action} className="space-y-4">
               {/* Email or Username */}
               <div className="space-y-2">
-                <Label htmlFor="emailOrUsername" className="text-sm font-medium ">
-                  Email or Username
+                <Label htmlFor="email" className="text-sm font-medium ">
+                  Email
                 </Label>
                 <div className="relative">
                   <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -129,7 +125,8 @@ export default function PatientLoginPage() {
                   Forgot password?
                 </Link>
               </div>
-
+              
+              {state?.errors && <p>{state.errors}</p>}
               {/* Login Button */}
               <Button type="submit" className="w-full h-11 bg-emerald-600 hover:bg-emerald-700 text-white font-medium">
                 Sign In

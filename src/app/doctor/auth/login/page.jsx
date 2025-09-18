@@ -1,26 +1,22 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useActionState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Eye, EyeOff, Stethoscope } from "lucide-react"
+import { doctorLogin } from "@/app/auth/actions"
 
 
 export default function DoctorLogin() {
     const [showPassword, setShowPassword] = useState(false)
+    const [state, action, pending] = useActionState(doctorLogin, undefined)
     const [formData, setFormData] = useState({
         email: "",
         password: "",
         rememberMe: false,
     })
-
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        console.log("Doctor login attempt:", formData)
-        // Handle login logic here
-    }
 
     const handleInputChange = (e) => {
         const { name, value, type, checked } = e.target
@@ -52,7 +48,7 @@ export default function DoctorLogin() {
                     </div>
 
                     <div className="rounded-lg shadow-lg p-6 sm:p-8">
-                        <form onSubmit={handleSubmit} className="space-y-6">
+                        <form  action={action} className="space-y-6">
                             <div className="flex items-center justify-center mb-6">
                                 <Stethoscope className="h-6 w-6 text-emerald-600 mr-2" />
                                 <span className="text-lg font-semibold ">Doctor Login</span>
@@ -122,11 +118,12 @@ export default function DoctorLogin() {
                                 </a>
                             </div>
 
+                            {state?.errors && <p>{state.errors}</p>}
                             <Button
                                 type="submit"
                                 className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2 px-4 rounded-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2"
                             >
-                                Login In to Portal
+                                {pending ? 'Logging in...' : 'Login To Portal'}
                             </Button>
                         </form>
                     </div>

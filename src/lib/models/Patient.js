@@ -15,7 +15,8 @@ const PatientSchema = new Schema({
     currentMedications: { type: String },
     allergies: { type: String },
     emergencyContact: { type: String },
+    role: { type: String, default: 'patient' },
 })
 
-const Patient = mongoose.models.Patient || mongoose.model("Patient", PatientSchema)
+const Patient = mongoose.models?.Patient || mongoose.model("Patient", PatientSchema)
 export default Patient

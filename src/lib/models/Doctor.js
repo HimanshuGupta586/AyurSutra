@@ -10,8 +10,9 @@ const DoctorSchema = new Schema({
     clinicAddress: { type: String, required: true },
     timings: { type: String, required: true },
     patients: [{ type: Schema.Types.ObjectId, ref: 'Patient' }],
+    role: { type: String, default: 'doctor' },
 })
 
-const Doctor = mongoose.models.Doctor || mongoose.model("Doctor", DoctorSchema)
+const Doctor = mongoose.models?.Doctor || mongoose.model("Doctor", DoctorSchema)
 
 export default Doctor

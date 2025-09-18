@@ -59,8 +59,8 @@ export async function patientLogin(state, formData){
 
 export async function patientSignup(state, formData) {
     const validatedFields = SignupFormSchema.safeParse({
-        fname: formData.get('fname'),
-        lname: formData.get('lname'),
+        fname: formData.get('firstName'),
+        lname: formData.get('lastName'),
         username: formData.get('username'),
         email: formData.get('email'),
         password: formData.get('password'),
@@ -73,7 +73,7 @@ export async function patientSignup(state, formData) {
         }
     }
     
-    const { username, email, password } = validatedFields.data
+    const {fname, lname, username, email, password } = validatedFields.data
 
     await connectDB()
 
@@ -86,7 +86,7 @@ export async function patientSignup(state, formData) {
     }
 
     const hashedPassword = await hashPassword(password)
-    const user = await Patient.create({ fname, lname, email, password: hashedPassword })
+    const user = await Patient.create({ fname, lname, username, email, password: hashedPassword })
 
     await signIn('credentials', {
         email,

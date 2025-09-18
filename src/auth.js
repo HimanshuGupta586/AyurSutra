@@ -1,7 +1,8 @@
 import 'server-only'
 import NextAuth from "next-auth"
 import Credentials from "next-auth/providers/credentials"
-import User from "@/lib/models/User"
+import Patient from "@/lib/models/Patient"
+import Doctor from './lib/models/Doctor'
 import connectDB from "@/lib/connectDB"
 
 const callbacks = {
@@ -12,8 +13,7 @@ const callbacks = {
   async jwt({ token, user }) {
     if (user) { // User is available during sign-in
       token.username = user.username
-      token.role = user.isAdmin ? "admin" : "user"
-    }
+      token.role = user.role }
     return token
 
   },
@@ -37,8 +37,9 @@ const providers = [
         let user = null
 
         await connectDB()
+        role = credentials.role
 
-        user = await User.findOne({ email: credentials.email })
+        user = await (role === 'doctor' ? Doctor : Patient).findOne({ email: credentials.email })
 
         // return user object with their profile data
         return user
@@ -54,6 +55,6 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
   callbacks,
   providers,
   pages:{
-    signIn: '/auth/login',
+    signIn: '/patient/auth/login',
   }
 })
