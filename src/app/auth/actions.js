@@ -51,7 +51,8 @@ export async function patientLogin(state, formData){
     }
 
     await signIn('credentials', {
-        email,
+        email: user.email,
+        role: user.role,
         redirectTo: '/'
     })
 
@@ -89,8 +90,8 @@ export async function patientSignup(state, formData) {
     const user = await Patient.create({ fname, lname, username, email, password: hashedPassword })
 
     await signIn('credentials', {
-        email,
-        password,
+        email: user.email,
+        role: user.role,
         redirectTo: '/'
     })
 }

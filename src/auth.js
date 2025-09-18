@@ -13,7 +13,8 @@ const callbacks = {
   async jwt({ token, user }) {
     if (user) { // User is available during sign-in
       token.username = user.username
-      token.role = user.role }
+      token.role = user.role
+    }
     return token
 
   },
@@ -30,16 +31,20 @@ const providers = [
     // e.g. domain, username, password, 2FA token, etc.
     credentials: {
       email: {},
-      password: {},
+      role: {},
     },
     authorize: async (credentials) => {
       try {
         let user = null
 
         await connectDB()
-        role = credentials.role
+        let role = credentials.role
 
-        user = await (role === 'doctor' ? Doctor : Patient).findOne({ email: credentials.email })
+        if(role === 'doctor') {
+          user = await Doctor.findOne({ email: credentials.email })
+        } else {
+          user = await Patient.findOne({ email: credentials.email })
+        }
 
         // return user object with their profile data
         return user
@@ -54,7 +59,7 @@ const providers = [
 export const { handlers, signIn, signOut, auth } = NextAuth({
   callbacks,
   providers,
-  pages:{
+  pages: {
     signIn: '/patient/auth/login',
   }
 })
