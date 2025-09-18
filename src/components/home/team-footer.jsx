@@ -77,7 +77,7 @@ export default function TeamFooter() {
             </div>
             <div className="text-center sm:text-right">
               <p className="text-sm text-muted-foreground mb-2">
-                © 2024 AyurSutra by Team NextGen. All rights reserved.
+                © 2025 AyurSutra by Team NextGen. All rights reserved.
               </p>
               <p className="text-xs text-muted-foreground">Bridging ancient wisdom with modern technology</p>
             </div>

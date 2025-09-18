@@ -37,7 +37,7 @@ export function Navbar() {
                                 <Link href="">Contact</Link>
                             </Button>
                         </div>
-                        <div><ModeToggle /></div>
+                        <div className="px-5"><ModeToggle /></div>
 
                         {/* Mobile Menu */}
                         <Sheet open={isOpen} onOpenChange={setIsOpen}>
