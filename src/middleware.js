@@ -7,7 +7,7 @@ export default auth((req) => {
   }
 
   if (req.auth && (req.nextUrl.pathname === "/patient/auth/login" || req.nextUrl.pathname === "/patient/auth/signup")) {
-    const newUrl = new URL("/", req.nextUrl.origin)
+    const newUrl = new URL("/dashboard", req.nextUrl.origin)
     return Response.redirect(newUrl)
   }
 })
