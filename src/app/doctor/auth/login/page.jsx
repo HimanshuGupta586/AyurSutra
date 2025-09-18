@@ -45,21 +45,21 @@ export default function DoctorLogin() {
                                 />
                             </svg>
                         </div>
-                        <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Doctor Portal</h2>
-                        <p className="mt-2 text-sm text-gray-600">
+                        <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Doctor Portal</h2>
+                        <p className="mt-2 text-sm text-primary">
                             Sign in to your AyurSutra account to access patient records and consultations
                         </p>
                     </div>
 
-                    <div className="bg-primary/10 rounded-lg shadow-lg p-6 sm:p-8">
+                    <div className="rounded-lg shadow-lg p-6 sm:p-8">
                         <form onSubmit={handleSubmit} className="space-y-6">
                             <div className="flex items-center justify-center mb-6">
                                 <Stethoscope className="h-6 w-6 text-emerald-600 mr-2" />
-                                <span className="text-lg font-semibold text-gray-900">Doctor Login</span>
+                                <span className="text-lg font-semibold ">Doctor Login</span>
                             </div>
 
                             <div className="space-y-2">
-                                <Label htmlFor="email" className="text-sm font-medium text-gray-700">
+                                <Label htmlFor="email" className="text-sm font-medium ">
                                     Medical License Email
                                 </Label>
                                 <Input
@@ -76,7 +76,7 @@ export default function DoctorLogin() {
                             </div>
 
                             <div className="space-y-2">
-                                <Label htmlFor="password" className="text-sm font-medium text-gray-700">
+                                <Label htmlFor="password" className="text-sm font-medium ">
                                     Password
                                 </Label>
                                 <div className="relative">
@@ -113,7 +113,7 @@ export default function DoctorLogin() {
                                         checked={formData.rememberMe}
                                         onCheckedChange={(checked) => setFormData((prev) => ({ ...prev, rememberMe: checked }))}
                                     />
-                                    <Label htmlFor="rememberMe" className="text-sm text-gray-600">
+                                    <Label htmlFor="rememberMe" className="text-sm ">
                                         Remember me
                                     </Label>
                                 </div>

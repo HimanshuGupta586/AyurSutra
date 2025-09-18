@@ -48,7 +48,7 @@ export default function PatientSignupPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-emerald-50 to-teal-50 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-gradient-to-br from-primary/5 to-accent/5 flex items-center justify-center p-4">
       <div className="w-full max-w-md">
         {/* Header */}
         <div className="text-center mb-8">
@@ -57,14 +57,14 @@ export default function PatientSignupPage() {
               <Leaf className="h-8 w-8 text-emerald-600" />
             </div>
           </div>
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">Patient Signup</h1>
-          <p className="text-gray-600">Join AyurSutra for personalized healthcare</p>
+          <h1 className="text-3xl font-bold mb-2 ">Patient Signup</h1>
+          <p className=" text-primary">Join AyurSutra for personalized healthcare</p>
         </div>
 
         {/* Signup Form */}
-        <Card className="shadow-lg border-0">
+        <Card className="shadow-lg border-0 ">
           <CardHeader className="space-y-1 pb-6">
-            <CardTitle className="text-2xl text-center text-gray-900">Create Account</CardTitle>
+            <CardTitle className="text-2xl text-center ">Create Account</CardTitle>
             <CardDescription className="text-center text-gray-600">Fill in your details to get started</CardDescription>
           </CardHeader>
 
@@ -78,7 +78,7 @@ export default function PatientSignupPage() {
                   </Label>
                   <div className="relative">
                     <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                      <User className="h-4 w-4 text-gray-400" />
+                      <User className="h-4 w-4 " />
                     </div>
                     <Input
                       id="firstName"
@@ -99,7 +99,7 @@ export default function PatientSignupPage() {
                   </Label>
                   <div className="relative">
                     <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                      <User className="h-4 w-4 text-gray-400" />
+                      <User className="h-4 w-4 " />
                     </div>
                     <Input
                       id="lastName"
@@ -122,7 +122,7 @@ export default function PatientSignupPage() {
                 </Label>
                 <div className="relative">
                   <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                    <UserCheck className="h-4 w-4 text-gray-400" />
+                    <UserCheck className="h-4 w-4 " />
                   </div>
                   <Input
                     id="username"
@@ -144,7 +144,7 @@ export default function PatientSignupPage() {
                 </Label>
                 <div className="relative">
                   <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                    <Mail className="h-4 w-4 text-gray-400" />
+                    <Mail className="h-4 w-4 " />
                   </div>
                   <Input
                     id="email"
@@ -166,7 +166,7 @@ export default function PatientSignupPage() {
                 </Label>
                 <div className="relative">
                   <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                    <Lock className="h-4 w-4 text-gray-400" />
+                    <Lock className="h-4 w-4 " />
                   </div>
                   <Input
                     id="password"
@@ -199,7 +199,8 @@ export default function PatientSignupPage() {
                 </Label>
                 <div className="relative">
                   <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                    <Lock className="h-4 w-4 text-gray-400" />
+                    <Lock className="h-4 w-4 ]
+                     " />
                   </div>
                   <Input
                     id="confirmPassword"
@@ -265,19 +266,17 @@ export default function PatientSignupPage() {
           <CardFooter className="flex flex-col space-y-4 pt-6">
             <div className="text-center text-sm text-gray-600">
               Already have an account?{" "}
-              <Link href="/login/patients" className="text-emerald-600 hover:text-emerald-700 font-medium">
-                Sign in here
+              <Link href="/patient/auth/login" className="text-emerald-600 hover:text-emerald-700 font-medium">
+                Login here
               </Link>
             </div>
 
             {/* Alternative Signup Options */}
             <div className="w-full">
               <div className="relative">
-                <div className="absolute inset-0 flex items-center">
-                  <div className="w-full border-t border-gray-200" />
-                </div>
+
                 <div className="relative flex justify-center text-sm">
-                  <span className="px-2 bg-white text-gray-500">Or sign up with</span>
+                  <span className="px-2 text-gray-500">Or sign up with</span>
                 </div>
               </div>
 
@@ -314,7 +313,7 @@ export default function PatientSignupPage() {
 
         {/* Back to Home */}
         <div className="text-center mt-6">
-          <Link href="/" className="text-sm text-gray-600 hover:text-emerald-600 font-medium">
+          <Link href="/" className="text-sm hover:text-emerald-600 font-medium">
             ← Back to AyurSutra
           </Link>
         </div>

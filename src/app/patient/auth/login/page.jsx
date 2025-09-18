@@ -40,15 +40,15 @@ export default function PatientLoginPage() {
               <Leaf className="h-8 w-8 text-emerald-600" />
             </div>
           </div>
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">Patient Login</h1>
-          <p className="text-gray-600">Access your AyurSutra health portal</p>
+          <h1 className="text-3xl font-bold ">Patient Login</h1>
+          <p className="text-emerald-600">Access your AyurSutra health portal</p>
         </div>
 
         {/* Login Form */}
-        <Card className="shadow-lg border-0 bg-primary/10">
+        <Card className="shadow-lg border-0 ">
           <CardHeader className="space-y-1 pb-6">
-            <CardTitle className="text-2xl text-center text-gray-900">Welcome Back</CardTitle>
-            <CardDescription className="text-center text-gray-600">
+            <CardTitle className="text-2xl text-center ">Welcome Back</CardTitle>
+            <CardDescription className="text-center ">
               Enter your credentials to access your account
             </CardDescription>
           </CardHeader>
@@ -57,7 +57,7 @@ export default function PatientLoginPage() {
             <form onSubmit={handleSubmit} className="space-y-4">
               {/* Email or Username */}
               <div className="space-y-2">
-                <Label htmlFor="emailOrUsername" className="text-sm font-medium text-gray-700">
+                <Label htmlFor="emailOrUsername" className="text-sm font-medium ">
                   Email or Username
                 </Label>
                 <div className="relative">
@@ -71,7 +71,7 @@ export default function PatientLoginPage() {
                     placeholder="Enter your email or username"
                     value={loginData.emailOrUsername}
                     onChange={handleInputChange}
-                    className="pl-10 h-11 border-gray-200 focus:border-emerald-500 focus:ring-emerald-500"
+                    className="pl-10 h-11 border-gray-200 focus:border-emerald-500 "
                     required
                   />
                 </div>
@@ -79,7 +79,7 @@ export default function PatientLoginPage() {
 
               {/* Password */}
               <div className="space-y-2">
-                <Label htmlFor="password" className="text-sm font-medium text-gray-700">
+                <Label htmlFor="password" className="text-sm font-medium">
                   Password
                 </Label>
                 <div className="relative">
@@ -121,7 +121,7 @@ export default function PatientLoginPage() {
                     onChange={handleInputChange}
                     className="h-4 w-4 text-emerald-600 focus:ring-emerald-500 border-gray-300 rounded"
                   />
-                  <Label htmlFor="rememberMe" className="text-sm text-gray-600">
+                  <Label htmlFor="rememberMe" className="text-sm ">
                     Remember me
                   </Label>
                 </div>
@@ -140,7 +140,7 @@ export default function PatientLoginPage() {
           <CardFooter className="flex flex-col space-y-4 pt-6">
             <div className="text-center text-sm text-gray-600">
               Don't have an account?{" "}
-              <Link href="/signup/patients" className="text-emerald-600 hover:text-emerald-700 font-medium">
+              <Link href="/patient/auth/signup" className="text-emerald-600 hover:text-emerald-700 font-medium">
                 Sign up here
               </Link>
             </div>
@@ -149,7 +149,7 @@ export default function PatientLoginPage() {
 
         {/* Back to Home */}
         <div className="text-center mt-6">
-          <Link href="/" className="text-sm text-gray-600 hover:text-emerald-600 font-medium">
+          <Link href="/" className="text-sm  hover:text-emerald-600 font-medium">
             ← Back to AyurSutra
           </Link>
         </div>
