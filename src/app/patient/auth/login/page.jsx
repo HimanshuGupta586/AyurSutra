@@ -13,7 +13,7 @@ export default function PatientLoginPage() {
   const [showPassword, setShowPassword] = useState(false)
   const [state, action, pending] = useActionState(patientLogin, undefined)
   const [loginData, setLoginData] = useState({
-    emailOrUsername: "",
+    email: "",
     password: "",
     rememberMe: false,
   })
@@ -61,11 +61,11 @@ export default function PatientLoginPage() {
                     <User className="h-4 w-4 text-gray-400" />
                   </div>
                   <Input
-                    id="emailOrUsername"
-                    name="emailOrUsername"
+                    id="email"
+                    name="email"
                     type="text"
                     placeholder="Enter your email or username"
-                    value={loginData.emailOrUsername}
+                    value={loginData.email}
                     onChange={handleInputChange}
                     className="pl-10 h-11 border-gray-200 focus:border-emerald-500 "
                     required

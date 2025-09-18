@@ -33,7 +33,7 @@ export async function doctorLogin(state, formData){
 }
 
 export async function patientLogin(state, formData){
-    await connectDB();
+
     const email = formData.get('email')
     const password = formData.get('password')
 
