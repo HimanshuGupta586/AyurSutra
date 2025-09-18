@@ -1,5 +1,5 @@
 import { Navbar } from "@/components/home/navbar"
-import { HeroSection } from "@/components/home/hero-secton"
+import { HeroSection } from "@/components/home/hero-section"
 import TeamFooter from "@/components/home/team-footer"
 
 export default function Home() {
