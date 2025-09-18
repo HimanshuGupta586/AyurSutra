@@ -26,7 +26,8 @@ export async function doctorLogin(state, formData){
     }
 
     await signIn('credentials', {
-        email,
+        email: user.email,
+        role: user.role,
         redirectTo: '/'
     })
 
