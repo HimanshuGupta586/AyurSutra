@@ -29,7 +29,7 @@ export function Navbar() {
                                 <Link href="/doctor/auth/login">Doctor Login</Link>
                             </Button>
                             <Button size="sm">
-                                <Link href="/doctor/auth/login">
+                                <Link href="../patient/auth/login">
                                     Patient Login/Signup
                                 </Link>
                             </Button>
@@ -55,7 +55,7 @@ export function Navbar() {
                                                 <Link href="/doctor/auth/login">Doctor Login</Link>
                                             </Button>
                                             <Button className="w-full">
-                                                <Link href="/doctor/auth/login">
+                                                <Link href="../patient/auth/login">
                                                     Patient Login/Signup
                                                 </Link></Button>
                                             <Button variant="outline" className="w-full bg-transparent">
