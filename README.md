@@ -48,27 +48,47 @@ Built with **Next.js**, **MongoDB/Mongoose**, **Tailwind + ShadCN** for UI, and 
 ---
 
 ## 📂 Project Structure
-└───src
-    ├───app
-    │   ├───api
-    │   │   ├───ai-chat
-    │   │   └───auth
-    │   │       └───[...nextauth]
-    │   ├───auth
-    │   ├───dashboard
-    │   │   ├───doctor
-    │   │   └───patient
-    │   ├───doctor
-    │   │   └───auth
-    │   │       └───login
-    │   └───patient
-    │       └───auth
-    │           ├───login
-    │           └───signup
-    ├───components
-    │   ├───dashboard
-    │   ├───home
-    │   ├───themes
-    │   └───ui
-    └───lib
-        └───models
+src
+ ├── app
+ │    ├── api
+ │    │    ├── ai-chat/                  # API route for AI chat
+ │    │    └── auth/[...nextauth]/       # NextAuth handler
+ │    ├── auth/                          # generic auth pages (if any)
+ │    ├── dashboard/
+ │    │    ├── doctor/                   # doctor dashboard pages
+ │    │    └── patient/                  # patient dashboard pages
+ │    ├── doctor/auth/login/             # doctor login page
+ │    └── patient/auth/                  # patient auth pages
+ │         ├── login/                    # patient login page
+ │         └── signup/                   # patient signup page
+ ├── components/
+ │    ├── dashboard/                     # dashboard-specific components
+ │    ├── home/                          # homepage components
+ │    ├── themes/                        # theme utilities
+ │    └── ui/                            # shared UI (ShadCN)
+ └── lib/
+      └── models/                        # mongoose schemas & models
+
+
+    ---
+
+## ⚙️ Setup Instructions
+
+### 1. Clone the repository
+    git clone https://github.com/your-username/ayursutra.git
+    cd ayursutra
+
+### 2. Install dependencies
+    npm install
+    # or
+    yarn install
+### 3. Environment variables
+    Create a .env.local file in the root:
+    MONGODB_URI=your_mongodb_connection_string
+    NEXTAUTH_SECRET=your_secret_key
+    NEXTAUTH_URL=http://localhost:3000
+    OPENAI_API_KEY=your_openai_api_key
+    
+### 4. Run the development server
+    npm run dev
+    Visit http://localhost:3000.
