@@ -75,7 +75,6 @@ export function DoctorConsultation() {
     },
   ]
 
-  // Video call modal state
   const [videoOpen, setVideoOpen] = useState(false);
   const videoRoomUrl = "https://your-domain.daily.co/your-room"; // Replace with your Daily room link
 
@@ -87,7 +86,6 @@ export function DoctorConsultation() {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        {/* Chat List */}
         <Card>
           <CardHeader>
             <CardTitle>Active Consultations</CardTitle>
@@ -128,8 +126,6 @@ export function DoctorConsultation() {
             ))}
           </CardContent>
         </Card>
-
-        {/* Chat Interface */}
         <Card className="lg:col-span-2">
           <CardHeader>
             {activeChat ? (
@@ -177,7 +173,6 @@ export function DoctorConsultation() {
           <CardContent>
             {activeChat ? (
               <div className="space-y-4">
-                {/* Chat Messages */}
                 <div className="h-64 overflow-y-auto space-y-3 p-3 bg-muted/20 rounded-lg">
                   {chatMessages.map((msg) => (
                     <div key={msg.id} className={`flex ${msg.sender === "patient" ? "justify-end" : "justify-start"}`}>
@@ -198,8 +193,6 @@ export function DoctorConsultation() {
                     </div>
                   ))}
                 </div>
-
-                {/* Message Input */}
                 <div className="flex space-x-2">
                   <div className="flex-1 relative">
                     <Textarea
@@ -231,8 +224,6 @@ export function DoctorConsultation() {
           </CardContent>
         </Card>
       </div>
-
-      {/* Upcoming Consultations */}
       <Card>
         <CardHeader>
           <CardTitle>Upcoming Consultations</CardTitle>

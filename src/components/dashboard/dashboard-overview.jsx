@@ -36,7 +36,6 @@ export function DashboardOverview({fname}) {
 
   return (
     <div className="space-y-6">
-      {/* Header */}
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-3xl font-bold text-balance">Welcome back, {fname}</h1>
@@ -48,7 +47,6 @@ export function DashboardOverview({fname}) {
         </div>
       </div>
 
-      {/* Quick Stats */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         <Card>
           <CardContent className="p-4">
@@ -100,7 +98,6 @@ export function DashboardOverview({fname}) {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        {/* Upcoming Appointments */}
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center space-x-2">
@@ -135,8 +132,6 @@ export function DashboardOverview({fname}) {
             </Button>
           </CardContent>
         </Card>
-
-        {/* Health Metrics */}
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center space-x-2">
@@ -173,7 +168,6 @@ export function DashboardOverview({fname}) {
         </Card>
       </div>
 
-      {/* Recent Medicines */}
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center space-x-2">

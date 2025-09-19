@@ -105,7 +105,6 @@ export function ProgressTracking() {
         <p className="text-muted-foreground mt-1">Monitor your wellness journey and health improvements</p>
       </div>
 
-      {/* Key Metrics */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         {vitalMetrics.map((metric, index) => {
           const Icon = metric.icon
@@ -131,7 +130,6 @@ export function ProgressTracking() {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        {/* Health Score Trend */}
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center space-x-2">
@@ -158,8 +156,6 @@ export function ProgressTracking() {
             </ResponsiveContainer>
           </CardContent>
         </Card>
-
-        {/* Dosha Balance */}
         <Card>
           <CardHeader>
             <CardTitle>Dosha Balance</CardTitle>
@@ -197,8 +193,6 @@ export function ProgressTracking() {
           </CardContent>
         </Card>
       </div>
-
-      {/* Symptoms Improvement */}
       <Card>
         <CardHeader>
           <CardTitle>Symptoms Improvement</CardTitle>
@@ -217,8 +211,6 @@ export function ProgressTracking() {
           </ResponsiveContainer>
         </CardContent>
       </Card>
-
-      {/* Achievements */}
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center space-x-2">
@@ -246,8 +238,6 @@ export function ProgressTracking() {
           </div>
         </CardContent>
       </Card>
-
-      {/* Treatment Timeline */}
       <Card>
         <CardHeader>
           <CardTitle>Treatment Timeline</CardTitle>

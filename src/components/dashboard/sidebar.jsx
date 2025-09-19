@@ -26,7 +26,6 @@ export function Sidebar({ activeSection, setActiveSection, fname, lname, usernam
         <h1 className="text-xl font-bold text-primary">AyurSutra</h1>
       </div>
 
-      {/* Navigation */}
       <nav className="space-y-2">
         {menuItems.map((item) => {
           const Icon = item.icon
@@ -44,7 +43,6 @@ export function Sidebar({ activeSection, setActiveSection, fname, lname, usernam
         })}
       </nav>
 
-      {/* User Profile */}
       <Card className="p-4 mt-auto">
         <div className="flex items-center space-x-3">
           <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">

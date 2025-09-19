@@ -73,7 +73,6 @@ export function AppointmentScheduler() {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        {/* Doctor Selection */}
         <div className="lg:col-span-2 space-y-4">
           <Card>
             <CardHeader>
@@ -126,8 +125,6 @@ export function AppointmentScheduler() {
               ))}
             </CardContent>
           </Card>
-
-          {/* Time Slot Selection */}
           {selectedDoctor && (
             <Card>
               <CardHeader>
@@ -152,8 +149,6 @@ export function AppointmentScheduler() {
             </Card>
           )}
         </div>
-
-        {/* Booking Summary */}
         <div>
           <Card className="sticky top-4">
             <CardHeader>

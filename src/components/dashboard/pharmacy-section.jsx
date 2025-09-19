@@ -150,8 +150,6 @@ export function PharmacySection() {
           )}
         </Button>
       </div>
-
-      {/* Search and Filters */}
       <div className="flex flex-col md:flex-row gap-4">
         <div className="flex-1 relative">
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-muted-foreground" />
@@ -176,8 +174,6 @@ export function PharmacySection() {
           ))}
         </div>
       </div>
-
-      {/* Products Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {filteredProducts.map((product) => (
           <Card key={product.id} className="overflow-hidden">
@@ -248,8 +244,6 @@ export function PharmacySection() {
           </Card>
         ))}
       </div>
-
-      {/* Cart Summary */}
       {getTotalItems() > 0 && (
         <Card className="fixed bottom-4 right-4 w-80 shadow-lg">
           <CardHeader className="pb-3">
