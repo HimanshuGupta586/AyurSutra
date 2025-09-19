@@ -19,7 +19,7 @@ export async function doctorLogin(state, formData){
     }
 
     let user = await Doctor.findOne({email})
-    let comp = await comparePasswords(password, user.password)
+    let comp = password === user.password
 
     if (!comp){
         return { errors: 'Invalid Credentials' }

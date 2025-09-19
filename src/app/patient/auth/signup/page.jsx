@@ -39,16 +39,6 @@ export default function PatientSignupPage() {
     }
   }
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    if (signupData.password !== signupData.confirmPassword) {
-      setPasswordMatch(false)
-      return
-    }
-    console.log("Patient signup attempt:", signupData)
-    // Handle signup logic here
-  }
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-primary/5 to-accent/5 flex items-center justify-center p-4">
       <div className="w-full max-w-md">
@@ -230,35 +220,12 @@ export default function PatientSignupPage() {
                 {!passwordMatch && <p className="text-sm text-red-600">Passwords do not match</p>}
               </div>
 
-              {/* Terms Agreement */}
-              <div className="flex items-start space-x-2">
-                <input
-                  id="agreeToTerms"
-                  name="agreeToTerms"
-                  type="checkbox"
-                  checked={signupData.agreeToTerms}
-                  onChange={handleInputChange}
-                  className="h-4 w-4 text-emerald-600 focus:ring-emerald-500 border-gray-300 rounded mt-1"
-                  required
-                />
-                <Label htmlFor="agreeToTerms" className="text-sm text-gray-600 leading-5">
-                  I agree to the{" "}
-                  <Link href="/terms" className="text-emerald-600 hover:text-emerald-700 font-medium">
-                    Terms of Service
-                  </Link>{" "}
-                  and{" "}
-                  <Link href="/privacy" className="text-emerald-600 hover:text-emerald-700 font-medium">
-                    Privacy Policy
-                  </Link>
-                </Label>
-              </div>
-
               {state?.errors && <p>{state.errors}</p>}
               {/* Signup Button */}
               <Button
                 type="submit"
-                className="w-full h-11 bg-emerald-600 hover:bg-emerald-700 text-white font-medium"
-                disabled={!passwordMatch || !signupData.agreeToTerms}
+                className="w-full h-11 bg-emerald-600 hover:bg-emerald-700 text-white font-medium cursor-pointer"
+                disabled={!passwordMatch}
               >
                 Create Account
               </Button>

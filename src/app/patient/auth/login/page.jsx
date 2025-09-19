@@ -105,30 +105,10 @@ export default function PatientLoginPage() {
                   </button>
                 </div>
               </div>
-
-              {/* Remember Me & Forgot Password */}
-              <div className="flex items-center justify-between">
-                <div className="flex items-center space-x-2">
-                  <input
-                    id="rememberMe"
-                    name="rememberMe"
-                    type="checkbox"
-                    checked={loginData.rememberMe}
-                    onChange={handleInputChange}
-                    className="h-4 w-4 text-emerald-600 focus:ring-emerald-500 border-gray-300 rounded"
-                  />
-                  <Label htmlFor="rememberMe" className="text-sm ">
-                    Remember me
-                  </Label>
-                </div>
-                <Link href="/forgot-password" className="text-sm text-emerald-600 hover:text-emerald-700 font-medium">
-                  Forgot password?
-                </Link>
-              </div>
               
               {state?.errors && <p>{state.errors}</p>}
               {/* Login Button */}
-              <Button type="submit" className="w-full h-11 bg-emerald-600 hover:bg-emerald-700 text-white font-medium">
+              <Button type="submit" className="w-full h-11 bg-emerald-600 hover:bg-emerald-700 text-white font-medium cursor-pointer">
                 Sign In
               </Button>
             </form>

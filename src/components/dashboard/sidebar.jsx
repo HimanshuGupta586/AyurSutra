@@ -58,8 +58,8 @@ export function Sidebar({ activeSection, setActiveSection, fname, lname, usernam
       </Card>
       <div>
       </div >
-      <div className="mt-4">
-        <Button onClick={() => signOut()}>Sign Out</Button>
+      <div className="flex items-center justify-center p-4 border-t">
+        <Button onClick={() => signOut()} className="w-full cursor-pointer">Sign Out</Button>
       </div>
     </div>
   )

@@ -48,7 +48,7 @@ export default function DoctorLogin() {
                     </div>
 
                     <div className="rounded-lg shadow-lg p-6 sm:p-8">
-                        <form  action={action} className="space-y-6">
+                        <form action={action} className="space-y-6">
                             <div className="flex items-center justify-center mb-6">
                                 <Stethoscope className="h-6 w-6 text-emerald-600 mr-2" />
                                 <span className="text-lg font-semibold ">Doctor Login</span>
@@ -101,40 +101,13 @@ export default function DoctorLogin() {
                                 </div>
                             </div>
 
-                            <div className="flex items-center justify-between">
-                                <div className="flex items-center space-x-2">
-                                    <Checkbox
-                                        id="rememberMe"
-                                        name="rememberMe"
-                                        checked={formData.rememberMe}
-                                        onCheckedChange={(checked) => setFormData((prev) => ({ ...prev, rememberMe: checked }))}
-                                    />
-                                    <Label htmlFor="rememberMe" className="text-sm ">
-                                        Remember me
-                                    </Label>
-                                </div>
-                                <a href="#" className="text-sm text-emerald-600 hover:text-emerald-500 font-medium">
-                                    Forgot password?
-                                </a>
-                            </div>
-
                             {state?.errors && <p>{state.errors}</p>}
-<Link
-  href="/dashboard/doctor"
-  className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2 px-4 rounded-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 text-center block"
->
-  Login
-</Link>
+                            <Button
+                                className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2 px-4 rounded-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 text-center block cursor-pointer"
+                            >
+                                Login
+                            </Button>
                         </form>
-                    </div>
-
-                    <div className="text-center">
-                        <p className="text-sm text-gray-500">
-                            Need help accessing your account?{" "}
-                            <a href="#" className="font-medium text-emerald-600 hover:text-emerald-500">
-                                Contact Support
-                            </a>
-                        </p>
                     </div>
                 </div>
 
