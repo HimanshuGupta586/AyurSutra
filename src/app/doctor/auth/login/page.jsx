@@ -1,5 +1,5 @@
 "use client"
-
+import Link from "next/link"
 import { useState, useActionState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -119,12 +119,12 @@ export default function DoctorLogin() {
                             </div>
 
                             {state?.errors && <p>{state.errors}</p>}
-                            <Button
-                                type="submit"
-                                className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2 px-4 rounded-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2"
-                            >
-                                {pending ? 'Logging in...' : 'Login To Portal'}
-                            </Button>
+<Link
+  href="/dashboard/doctor"
+  className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2 px-4 rounded-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 text-center block"
+>
+  Login
+</Link>
                         </form>
                     </div>
 

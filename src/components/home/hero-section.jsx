@@ -23,9 +23,9 @@ export function HeroSection() {
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-          <Card className="text-center">
-            <CardContent className="pt-6">
-              <div className="flex justify-center mb-4">
+          <Card className="text-center transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:text-primary ...">
+            <CardContent className="pt-6 ">
+              <div className="flex justify-center mb-4 ">
                 <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center">
                   <Heart className="h-6 w-6 text-primary" />
                 </div>
@@ -37,7 +37,7 @@ export function HeroSection() {
             </CardContent>
           </Card>
 
-          <Card className="text-center">
+          <Card className="text-center  transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:text-primary ...">
             <CardContent className="pt-6">
               <div className="flex justify-center mb-4">
                 <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center">
@@ -51,7 +51,7 @@ export function HeroSection() {
             </CardContent>
           </Card>
 
-          <Card className="text-center sm:col-span-2 lg:col-span-1">
+          <Card className="text-center sm:col-span-2 lg:col-span-1  transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:text-primary ...">
             <CardContent className="pt-6">
               <div className="flex justify-center mb-4">
                 <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center">

@@ -51,14 +51,14 @@ export function Navbar() {
                                 <div>
                                     <div className="pt-4 border-t">
                                         <div className="flex flex-col space-y-6 mt-6 p-5">
-                                            <Button className="w-full">
+                                            <Button className="w-full  transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:text-primary ...">
                                                 <Link href="/doctor/auth/login">Doctor Login</Link>
                                             </Button>
-                                            <Button className="w-full">
+                                            <Button className="w-full  transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:text-primary ...">
                                                 <Link href="../patient/auth/login">
                                                     Patient Login/Signup
                                                 </Link></Button>
-                                            <Button variant="outline" className="w-full bg-transparent">
+                                            <Button variant="outline" className="w-full bg-transparent  transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:text-primary ...">
                                                 <Link href="">Contact</Link>
                                             </Button>
                                         </div>
