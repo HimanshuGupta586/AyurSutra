@@ -8,7 +8,6 @@ import { signIn } from '@/auth'
 import connectDB from '@/lib/connectDB'
 
 export async function doctorLogin(state, formData){
-    await connectDB();
     const email = formData.get('email')
     const password = formData.get('password')
 

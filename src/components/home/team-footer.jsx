@@ -1,36 +1,39 @@
 import { Card, CardContent } from "@/components/ui/card"
 import { Github, Linkedin, Twitter } from "lucide-react"
+import Link from "next/link";
 
 export default function TeamFooter() {
   const teamMembers = [
     {
       name: "Himanshu Gupta",
       role: "Lead Developer",
-      image: "",
+      linkedinUrl: "https://www.linkedin.com/in/himanshu-gupta-05b59837b/",
+      githubUrl: "https://github.com/HimanshuGupta586",
     },
     {
       name: "Vinayak Yadav",
       role: "Frontend Developer",
-      image: "",
+      linkedinUrl: "https://www.linkedin.com/in/vinayak-yadav-75363937b",
+      githubUrl: "https://github.com/vinayakydv733",
     },
     {
       name: "Madhav Sharama",
       role: "Backend Developer",
-      image: "",
+      linkedinUrl: "https://www.linkedin.com/in/madhav-sharma-3b698a338?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
     },
     {
       name: "Devendra Yadav",
       role: "UI/UX Designer",
-      image: "",
+      linkedinUrl: "https://www.linkedin.com/in/devendra-yadav-3ba64a37b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
     },
-        {
+    {
       name: "Gurpreet Kour Bhatia",
       role: "UI/UX Designer",
-      image: "",
-    },    {
+      linkedinUrl: "https://www.linkedin.com/in/gurpreet-kour-bhatia-0a2a18277?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    }, {
       name: "Khushi Dabad",
       role: "UI/UX Designer",
-      image: "",
+      linkedinUrl: "https://www.linkedin.com/in/khushi-dabad-3854b8385?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
     },
   ]
 
@@ -45,22 +48,19 @@ export default function TeamFooter() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-6 sm:gap-8 mb-8 sm:mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-8 sm:mb-12">
           {teamMembers.map((member, index) => (
             <Card key={index} className="text-center">
               <CardContent className="pt-6">
                 <h3 className="text-base sm:text-lg font-semibold text-foreground mb-1">{member.name}</h3>
                 <p className="text-xs sm:text-sm text-muted-foreground mb-4 leading-relaxed">{member.role}</p>
                 <div className="flex justify-center space-x-3">
-                  <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+                  <Link href={member.linkedinUrl} className="text-muted-foreground hover:text-primary transition-colors" target="_blank">
                     <Linkedin className="h-4 w-4" />
-                  </a>
-                  <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                    <Twitter className="h-4 w-4" />
-                  </a>
-                  <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+                  </Link>
+                  {member.githubUrl && <Link href={member.githubUrl} className="text-muted-foreground hover:text-primary transition-colors" target="_blank">
                     <Github className="h-4 w-4" />
-                  </a>
+                  </Link>}
                 </div>
               </CardContent>
             </Card>

@@ -34,7 +34,7 @@ export function Navbar() {
                                 </Link>
                             </Button>
                             <Button variant="outline" size="sm">
-                                <Link href="">Contact</Link>
+                                <Link href="https://www.linkedin.com/in/vinayak-yadav-75363937b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app ">Contact</Link>
                             </Button>
                         </div>
                         <div className="px-5"><ModeToggle /></div>
