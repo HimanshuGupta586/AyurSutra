@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import { Sheet, SheetTrigger, SheetContent, SheetClose } from "@/components/ui/sheet"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
@@ -74,6 +75,10 @@ export function DoctorConsultation() {
     },
   ]
 
+  // Video call modal state
+  const [videoOpen, setVideoOpen] = useState(false);
+  const videoRoomUrl = "https://your-domain.daily.co/your-room"; // Replace with your Daily room link
+
   return (
     <div className="space-y-6">
       <div>
@@ -137,9 +142,29 @@ export function DoctorConsultation() {
                   <Button size="sm" variant="outline">
                     <Phone className="w-4 h-4" />
                   </Button>
-                  <Button size="sm">
-                    <Video className="w-4 h-4" />
-                  </Button>
+                  <Sheet open={videoOpen} onOpenChange={setVideoOpen}>
+                    <SheetTrigger asChild>
+                      <Button size="sm" onClick={() => setVideoOpen(true)}>
+                        <Video className="w-4 h-4" />
+                      </Button>
+                    </SheetTrigger>
+                    <SheetContent side="right" className="max-w-xl w-full">
+                      <div className="flex justify-between items-center mb-2">
+                        <h2 className="text-lg font-semibold">Video Call</h2>
+                        <SheetClose asChild>
+                          <Button size="icon" variant="ghost" onClick={() => setVideoOpen(false)}>
+                            ×
+                          </Button>
+                        </SheetClose>
+                      </div>
+                      <iframe
+                        src={videoRoomUrl}
+                        allow="camera; microphone; fullscreen; speaker; display-capture"
+                        className="w-full h-[70vh] rounded-lg border"
+                        title="Video Call"
+                      />
+                    </SheetContent>
+                  </Sheet>
                 </div>
               </div>
             ) : (
@@ -234,10 +259,30 @@ export function DoctorConsultation() {
                       {consultation.type}
                     </Badge>
                   </div>
-                  <Button size="sm">
-                    <Video className="w-4 h-4 mr-1" />
-                    Join
-                  </Button>
+                  <Sheet open={videoOpen} onOpenChange={setVideoOpen}>
+                    <SheetTrigger asChild>
+                      <Button size="sm" onClick={() => setVideoOpen(true)}>
+                        <Video className="w-4 h-4 mr-1" />
+                        Join
+                      </Button>
+                    </SheetTrigger>
+                    <SheetContent side="right" className="max-w-xl w-full">
+                      <div className="flex justify-between items-center mb-2">
+                        <h2 className="text-lg font-semibold">Video Call</h2>
+                        <SheetClose asChild>
+                          <Button size="icon" variant="ghost" onClick={() => setVideoOpen(false)}>
+                            ×
+                          </Button>
+                        </SheetClose>
+                      </div>
+                      <iframe
+                        src={videoRoomUrl}
+                        allow="camera; microphone; fullscreen; speaker; display-capture"
+                        className="w-full h-[70vh] rounded-lg border"
+                        title="Video Call"
+                      />
+                    </SheetContent>
+                  </Sheet>
                 </div>
               </div>
             ))}

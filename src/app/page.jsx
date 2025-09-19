@@ -1,6 +1,7 @@
 import { Navbar } from "@/components/home/navbar"
 import { HeroSection } from "@/components/home/hero-section"
 import TeamFooter from "@/components/home/team-footer"
+import AIPopover from "@/components/ui/ai-popover"
 
 export default function Home() {
   return (
@@ -8,6 +9,7 @@ export default function Home() {
       <Navbar />
       <HeroSection />
       <TeamFooter />
+      <AIPopover />
     </main>
   )
 }
