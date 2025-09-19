@@ -47,31 +47,6 @@ Built with **Next.js**, **MongoDB/Mongoose**, **Tailwind + ShadCN** for UI, and 
 
 ---
 
-## 📂 Project Structure
-src
- ├── app
- │    ├── api
- │    │    ├── ai-chat/                  # API route for AI chat
- │    │    └── auth/[...nextauth]/       # NextAuth handler
- │    ├── auth/                          # generic auth pages (if any)
- │    ├── dashboard/
- │    │    ├── doctor/                   # doctor dashboard pages
- │    │    └── patient/                  # patient dashboard pages
- │    ├── doctor/auth/login/             # doctor login page
- │    └── patient/auth/                  # patient auth pages
- │         ├── login/                    # patient login page
- │         └── signup/                   # patient signup page
- ├── components/
- │    ├── dashboard/                     # dashboard-specific components
- │    ├── home/                          # homepage components
- │    ├── themes/                        # theme utilities
- │    └── ui/                            # shared UI (ShadCN)
- └── lib/
-      └── models/                        # mongoose schemas & models
-
-
-    ---
-
 ## ⚙️ Setup Instructions
 
 ### 1. Clone the repository
