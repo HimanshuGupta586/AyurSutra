@@ -29,7 +29,7 @@ export default function TeamFooter() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-8 sm:mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 sm:gap-8 mb-8 sm:mb-12">
           {teamMembers.map((member, index) => (
             <Card key={index} className="text-center">
               <CardContent className="pt-6">
