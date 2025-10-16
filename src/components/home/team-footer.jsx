@@ -6,7 +6,7 @@ export default function TeamFooter() {
   const teamMembers = [
     {
       name: "Himanshu Gupta",
-      role: "Lead Developer",
+      role: "Backend Developer",
       linkedinUrl: "https://www.linkedin.com/in/himanshu-gupta-05b59837b/",
       githubUrl: "https://github.com/HimanshuGupta586",
     },
@@ -15,25 +15,6 @@ export default function TeamFooter() {
       role: "Frontend Developer",
       linkedinUrl: "https://www.linkedin.com/in/vinayak-yadav-75363937b",
       githubUrl: "https://github.com/vinayakydv733",
-    },
-    {
-      name: "Madhav Sharama",
-      role: "Backend Developer",
-      linkedinUrl: "https://www.linkedin.com/in/madhav-sharma-3b698a338?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-    },
-    {
-      name: "Devendra Yadav",
-      role: "UI/UX Designer",
-      linkedinUrl: "https://www.linkedin.com/in/devendra-yadav-3ba64a37b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-    },
-    {
-      name: "Gurpreet Kour Bhatia",
-      role: "UI/UX Designer",
-      linkedinUrl: "https://www.linkedin.com/in/gurpreet-kour-bhatia-0a2a18277?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-    }, {
-      name: "Khushi Dabad",
-      role: "UI/UX Designer",
-      linkedinUrl: "https://www.linkedin.com/in/khushi-dabad-3854b8385?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
     },
   ]
 
