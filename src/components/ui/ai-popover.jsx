@@ -63,7 +63,7 @@ export default function AIPopover() {
           </div>
           <form onSubmit={sendMessage} className="flex gap-2 mt-2">
             <input
-              className="flex-1 border rounded-full px-3 py-2 text-sm focus:outline-none focus:ring"
+              className="flex-1 border rounded-full px-3 py-2 text-sm focus:outline-none focus:ring text-black"
               placeholder="Ask me anything..."
               value={input}
               onChange={e => setInput(e.target.value)}
