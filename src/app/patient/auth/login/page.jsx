@@ -108,8 +108,8 @@ export default function PatientLoginPage() {
               
               {state?.errors && <p>{state.errors}</p>}
               {/* Login Button */}
-              <Button type="submit" className="w-full h-11 bg-emerald-600 hover:bg-emerald-700 text-white font-medium cursor-pointer">
-                Sign In
+              <Button type="submit" className="w-full h-11 bg-emerald-600 hover:bg-emerald-700 text-white font-medium cursor-pointer" disabled={pending}>
+                {pending ? "Logging In..." : "Login"}
               </Button>
             </form>
           </CardContent>

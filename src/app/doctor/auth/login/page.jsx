@@ -1,10 +1,8 @@
 "use client"
-import Link from "next/link"
 import { useState, useActionState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { Checkbox } from "@/components/ui/checkbox"
 import { Eye, EyeOff, Stethoscope } from "lucide-react"
 import { doctorLogin } from "@/app/auth/actions"
 
@@ -104,8 +102,9 @@ export default function DoctorLogin() {
                             {state?.errors && <p>{state.errors}</p>}
                             <Button
                                 className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2 px-4 rounded-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 text-center block cursor-pointer"
+                                disabled={pending}
                             >
-                                Login
+                                {pending ? "Logging In..." : "Login"}
                             </Button>
                         </form>
                     </div>
