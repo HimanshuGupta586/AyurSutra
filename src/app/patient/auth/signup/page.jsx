@@ -220,14 +220,32 @@ export default function PatientSignupPage() {
                 {!passwordMatch && <p className="text-sm text-red-600">Passwords do not match</p>}
               </div>
 
-              {state?.errors && <p>{state.errors}</p>}
+              {state?.errors && (
+                <div role="alert" aria-live="assertive" className="bg-red-50 border border-red-200 text-red-800 p-3 rounded">
+                  <p className="font-medium mb-1">Please fix the following:</p>
+                  <ul className="list-disc list-inside space-y-1">
+                    {typeof state.errors === 'string' ? (
+                      <li>{state.errors}</li>
+                    ) : (
+                      // state.errors is expected to be an object of arrays from zod.flatten().fieldErrors
+                      Object.entries(state.errors).map(([field, messages]) => (
+                        Array.isArray(messages)
+                          ? messages.map((msg, idx) => (
+                            <li key={`${field}-${idx}`}>{msg}{field ? ` (${field})` : ''}</li>
+                          ))
+                          : null
+                      ))
+                    )}
+                  </ul>
+                </div>
+              )}
               {/* Signup Button */}
               <Button
                 type="submit"
                 className="w-full h-11 bg-emerald-600 hover:bg-emerald-700 text-white font-medium cursor-pointer"
-                disabled={!passwordMatch}
+                disabled={!passwordMatch || pending}
               >
-                Create Account
+                {pending ? 'Creating Account...' : 'Create Account'}
               </Button>
             </form>
           </CardContent>
